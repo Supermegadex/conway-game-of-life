@@ -13,9 +13,9 @@
   "author": "Daniel Noon",
   "license": "GPL-3.0",
   "dependencies": {
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "concurrently": "^3.5.1",
     "serve": "^6.4.1",
     "sha256": "^0.2.0",

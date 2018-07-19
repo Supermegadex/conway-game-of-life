@@ -50,7 +50,7 @@ function generate(seed) {
   let scaled = hash.map((d, i) => Math.round(((i % 2) ? 29 : 59) * (d / 255)));
   let x = 0;
   let y = 0;
-  scaled.map((d, i) => {
+  scaled.forEach((d, i) => {
     if (i % 2) {
       y = d;
       gol.cells[y][x].setState(ALIVE);
@@ -67,15 +67,15 @@ function set(data) {
 }
 
 function doTick() {
-  gol.cells.map(d => d.map(e => e.checkForNeighbors()));
-  gol.cells.map(d => d.map(e => e.update()));
+  gol.cells.forEach(d => d.forEach(e => e.checkForNeighbors()));
+  gol.cells.forEach(d => d.forEach(e => e.update()));
   askQuestion();
 }
 
 function makeBoard() {
   let arrBoard = [];
-  gol.cells.map(d => {
-    d.map(e => {
+  gol.cells.forEach(d => {
+    d.forEach(e => {
       arrBoard.push(e.getState() === ALIVE ? "*" : "-")
     });
     arrBoard.push("\n");
